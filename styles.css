@@ -1,0 +1,105 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f5285;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piano {
+  display: flex;
+}
+
+.key {
+  height: calc(var(--width) * 4);
+  width: var(--width);
+}
+
+.white {
+  --width: 100px;
+  background-color: white;
+  border: 1px solid #333;
+}
+
+.white.active {
+  background-color: #CCC;
+}
+
+.black {
+  --width: 60px;
+  background-color: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  z-index: 2;
+}
+
+.black.active {
+  background-color: #333;
+}
+
+.smiley-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.smiley {
+  position: fixed;
+  top: 35px;
+  right: 35px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.face {
+  background-color: #b80d0d;
+  width: 33px;
+  height: 33px;
+  border-radius: 100%;
+}  
+
+.mouth {
+  position: absolute;
+  width: 18px;
+  height: 7px;
+  border: 2px solid #222;
+  border-top: 0;
+  background: transparent; /* Använd transparent bakgrundsfärg */
+  border-radius: 0 0 12px 12px / 0 0 9px 9px; /* Använd border-radius för att skapa rundning */
+  top: 20px;
+  left: 7px;
+}
+
+.left-eye {
+  background-color: #222;
+  width: 4px;
+  height: 5px;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  right: 19px;
+}
+
+.right-eye {
+  background-color: #222;
+  width: 4px;
+  height: 5px;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.smiley-button:active .smiley {
+  transform: scale(0.9); /* Förminskar smileyn när knappen klickas på */
+}
+
+.smiley-button:active  {
+  background-color: #184e85; 
+}
